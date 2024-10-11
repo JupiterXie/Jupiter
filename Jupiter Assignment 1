@@ -16,12 +16,10 @@ state diagram included in the assignment description:
 
 ### Hardware
 
-List all the separate hardware components used in your project and briefly 
-explain what they do. To create a list with markdown syntax, 
-use `-`, `*`, or `+` characters with each line of text:  
-* item 1  
-* item 2   
-* etc.  
+* Atom3 x1 (chip, 1output/1input)
+* Wires x10 (for circuit build)
+* BreadBoard x1 (for wire connection/place resistor)
+* LED x1 (for)
 
 [Jupiter Circuit Diagram](Project1_circuit.jpeg)  
 
