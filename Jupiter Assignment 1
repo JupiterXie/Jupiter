@@ -12,7 +12,7 @@ Explain the interactive behaviors of the prototype you created and include a
 state diagram (flowchart) to represent it.  For example, below is an example 
 state diagram included in the assignment description:  
 
-![Jupiter State Diagram](Project1_flowchart.png)  
+[Jupiter State Diagram](Project1_flowchart.png)  
 
 ### Hardware
 
@@ -22,6 +22,8 @@ use `-`, `*`, or `+` characters with each line of text:
 * item 1  
 * item 2   
 * etc.  
+
+[Jupiter Circuit Diagram](Project1_circuit.jpeg)  
 
 Include at least one image showing your hardware wiring. You can draw the wiring 
 connections by hand, use a graphical program, or take close-up photo(s).  
