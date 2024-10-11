@@ -30,9 +30,41 @@ connections by hand, use a graphical program, or take close-up photo(s).
 
 ### Firmware   
 
-Upload your MicroPython code and highlight important code snippet(s) that make 
-your prototype work.  Most likely you should explain the inputs/outputs used 
-in your code and how they affect the behavior of the prototype.
+import os, sys, io
+import M5
+from M5 import *
+from hardware import *
+import time
+pin7 = None
+pin8 = None
+ChargingTime = None
+state = None
+def setup():
+global pin7, pin8, ChargingTime, state
+M5.begin()
+pin7 = Pin(7, mode=Pin.OUT)
+pin8 Pin(8, mode=Pin.IN, pull=Pin.PULL_UP)
+ChargingTime = 0
+state = False
+def loop():
+global pin7, pin8, ChargingTime, state 
+M5.update()
+if pin8.value():
+pin7.off()
+ChargingTime = 0
+state = False
+else:
+if ChargingTime >= 5:
+if state:
+pin7.off()
+state = False
+else:
+pin7.on()
+state = True
+else:
+pin7.on()
+ChargingTime = ChargingTime + 0.5
+time.sleep(0.5)
 
 To include code snippets, you can use the code block markdown:
 
