@@ -3,8 +3,10 @@
 
 ### Introduction
 
-Provide a description of your initial project idea and include images of 
-the concept sketches that you created in Part 1 of this assignment.  
+A wireless phone charger that could indicate phone charge status in order to prevent neglected disconnection. 
+Inspired by in-car wireless charger.
+
+[Jupiter State Diagram](Project1_sketch.jpeg)  
 
 ### State Diagram
 
@@ -72,9 +74,12 @@ To include code snippets, you can use the code block markdown:
 
 ### Physical Components   
 
-Explain what products, materials or components you used for the project. 
-If you fabricated your own project components, include some details on 
-how you made them.
+CompositeWires, which contain 2 copper foil strip warped by paper, using double taps to fix parts on two ends.
+They are more safe ,stable, reusable, free to connect and disconnet, easy to produce.
+I made a lot in term 4's physical computing, so I use the old wires directly, they works well even after 2 terms.
+
+ChargerBase, which is made by cardboard found in hillside workshop. Fixed by hot glue gun. 
+This material is light and strong in triangular structure, you can cut them by scissor.
 
 ### Project outcome  
 
