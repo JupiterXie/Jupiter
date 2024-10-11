@@ -3,8 +3,8 @@
 
 ### Introduction
 
-A wireless phone charger that could indicate phone charge status in order to prevent neglected disconnection. 
-Inspired by in-car wireless charger.
+In the first project, I made a wireless phone charger that could indicate phone charge status.
+The design is to prevent neglected disconnection. Inspired by in-car wireless charger. 
 
 [Jupiter State Diagram](Project1_sketch.jpeg)  
 
@@ -86,15 +86,12 @@ It use the elasticity from fodded paper to keep good copper foil connection and 
 ChargerBase
 Made by cardboard found in hillside workshop. Fixed by hot glue gun. 
 This material is light and strong in triangular structure, you can cut them by scissor.
+It was made on Wednsday, easy-carry and strength are important consideration.
 
+### Project outcome
 
-### Project outcome  
+The final prototype works well with different types of phones. 
+If you take away phone while charging, the charger timer will also reset.
 
-Summarize the results of your project implementation and include at least 
-1 photo of the finished prototype.  
-
-Finally, include a short video walkthrough of your project showing all of 
-its functioning aspects (voice over is optional but could be helpful).  
-
-Note that GitHub has a small size limit for uploading files via browswer (25Mb max), 
-so you may choose to use a link to YouTube, Google Drive, or another external site.
+[Jupiter Demo]
+https://drive.google.com/file/d/1TDwas3dazcF_IvwDtrwMoQ5LcOsbJo-A/view?usp=share_link
