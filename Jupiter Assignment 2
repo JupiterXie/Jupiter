@@ -40,19 +40,59 @@ connections by hand, use a graphical program, or take close-up photo(s).
 
 ### Firmware   
 
-Upload your MicroPython code and highlight important code snippet(s) that make 
-your prototype work.  Most likely you should explain the inputs/outputs used 
-in your code and how they affect the behavior of the prototype.
+import os, sys, io
+import M5
+from M5 import *
+from hardware import *
+from unit import IMUProUnit
+import time
 
-To include code snippets, you can use the code block markdown:
+i2c0 = None
+imupro_0 = None
+IMU_data = None
+inputX = 0
+inputY = 0
+inputA = 0
 
-``` Python  
-  if input_pin.value():  # read digital input
-    led_pin.off()        # turn off LED light
-  else:
-    led_pin.on()         # turn on LED light
-```
+def inputdetection():
+    global inputX, inputY, inputA
+    Xvalue = IMU_data[0]
+    Yvalue = IMU_data[1]
+    #print(Xvalue,",",Yvalue)
+    if abs(Xvalue) > 0.3:
+        if Xvalue > 0:
+            inputX = -1
+        else:
+            inputX = 1
+    else:
+        inputX = 0
 
+    if abs(Yvalue) > 0.3:
+        if Yvalue > 0:
+            inputY = -1
+        else: 
+            inputY = 1
+    else:
+        inputY = 0
+        
+    if pin1.value():
+        inputA = 0
+    else:
+        inputA = 1
+    
+M5.begin()
+i2c0 = I2C(0, scl=Pin(39), sda=Pin(38), freq=100000)
+imupro_0 = IMUProUnit(i2c0)
+pin1 = Pin(1, mode=Pin.IN, pull=Pin.PULL_UP)
+
+while True:
+    M5.update()
+    IMU_data = imupro_0.get_accelerometer()
+    #print(IMU_data)
+    inputdetection()
+    print(inputX,",",inputY,",",inputA) #output
+    time.sleep_ms(50)
+ 
 ### Physical Components   
 
 Explain what products, materials or components you used for the project. 
