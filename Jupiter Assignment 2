@@ -1,67 +1,48 @@
-## Assignment #1
-
+## Assignment #1 Documentation Template  
+  
+Each assignment/project we complete in this class should be documented in your own 
+GitHub repository.  I recommend that you organize your project files into 
+separate folders and document it using a `README.md` file written in 
+text-based *Markdown* format (.md)  
+  
+Please review the [GitHub Markdown Tutorial](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 
+to learn how to on how to use this format. This page is the recommended structure for your 
+documentation and you can check its [raw version](https://github.com/pa-nik/FA24-IXD-256/edit/main/assignment01/README.md) 
+to see the Markdown code.  
+  
+Think of this documentation as project explanation and a resource for 
+yourself, as well as someone new who could be coming across your project online. 
 
 ### Introduction
 
-In the first project, I made a wireless phone charger that could indicate phone charge status.
-The design is to prevent neglected disconnection. Inspired by in-car wireless charger. 
-
-[Jupiter State Diagram](Project1_sketch.jpeg)  
+Provide a description of your initial project idea and include images of 
+the concept sketches that you created in Part 1 of this assignment.  
 
 ### State Diagram
 
-While no phone is on charger, LED off
-While phone is charging, LED on
-While phone charge complete(after 5s), LED blink.
+Explain the interactive behaviors of the prototype you created and include a 
+state diagram (flowchart) to represent it.  For example, below is an example 
+state diagram included in the assignment description:  
 
-[Jupiter State Diagram](Project1_flowchart.png)  
+![state diagram example](state-diagram-example.jpg)  
 
 ### Hardware
 
-* Atom3 x1 (chip, 1output/1input)
-* Wires x10 (for circuit build)
-* BreadBoard x1 (for wire connection/place resistor)
-* LED x1 (for)
+List all the separate hardware components used in your project and briefly 
+explain what they do. To create a list with markdown syntax, 
+use `-`, `*`, or `+` characters with each line of text:  
+* item 1  
+* item 2   
+* etc.  
 
-[Jupiter Circuit Diagram](Project1_circuit.jpeg)  
+Include at least one image showing your hardware wiring. You can draw the wiring 
+connections by hand, use a graphical program, or take close-up photo(s).  
 
 ### Firmware   
 
-import os, sys, io
-import M5
-from M5 import *
-from hardware import *
-import time
-pin7 = None
-pin8 = None
-ChargingTime = None
-state = None
-def setup():
-global pin7, pin8, ChargingTime, state
-M5.begin()
-pin7 = Pin(7, mode=Pin.OUT)
-pin8 Pin(8, mode=Pin.IN, pull=Pin.PULL_UP)
-ChargingTime = 0
-state = False
-def loop():
-global pin7, pin8, ChargingTime, state 
-M5.update()
-if pin8.value():
-pin7.off()
-ChargingTime = 0
-state = False
-else:
-if ChargingTime >= 5:
-if state:
-pin7.off()
-state = False
-else:
-pin7.on()
-state = True
-else:
-pin7.on()
-ChargingTime = ChargingTime + 0.5
-time.sleep(0.5)
+Upload your MicroPython code and highlight important code snippet(s) that make 
+your prototype work.  Most likely you should explain the inputs/outputs used 
+in your code and how they affect the behavior of the prototype.
 
 To include code snippets, you can use the code block markdown:
 
@@ -74,24 +55,17 @@ To include code snippets, you can use the code block markdown:
 
 ### Physical Components   
 
-CompositeWires
-Contain 2 copper foil strip warped by paper, using double taps to fix parts on two ends.
-They are more safe ,stable, reusable, free to connect and disconnet, easy to produce.
-I made a lot in term 4's physical computing, so I use the old wires directly, they works well even after 2 terms.
+Explain what products, materials or components you used for the project. 
+If you fabricated your own project components, include some details on 
+how you made them.
 
-The button
-Trigger by putting phone on it, which is a variation of composite wires.
-It use the elasticity from fodded paper to keep good copper foil connection and disconnect.
+### Project outcome  
 
-ChargerBase
-Made by cardboard found in hillside workshop. Fixed by hot glue gun. 
-This material is light and strong in triangular structure, you can cut them by scissor.
-It was made on Wednsday, easy-carry and strength are important consideration.
+Summarize the results of your project implementation and include at least 
+1 photo of the finished prototype.  
 
-### Project outcome
+Finally, include a short video walkthrough of your project showing all of 
+its functioning aspects (voice over is optional but could be helpful).  
 
-The final prototype works well with different types of phones. 
-If you take away phone while charging, the charger timer will also reset.
-
-[Jupiter Demo]
-https://drive.google.com/file/d/1TDwas3dazcF_IvwDtrwMoQ5LcOsbJo-A/view?usp=share_link
+Note that GitHub has a small size limit for uploading files via browswer (25Mb max), 
+so you may choose to use a link to YouTube, Google Drive, or another external site.
