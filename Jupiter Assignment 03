@@ -1,6 +1,10 @@
 ## Introduction   
 
 Provide a description of your initial project idea and include images of the concept sketches that you created in Part 1 of this assignment.  Explain the reasoning behind your final choice of the project concept, whether it’s based on one of the initial sketches, or a departure from the original idea.  
+My final project is a game controller specialized for shmup games. Because I want to chellange a more playable and technical project, so I chose to use the Unity Serial port.
+The controller connects to my Unity game and includs 4 input values (3 in joystick & 1 in button) and 1 LED output as feedback while score. 
+There are 3 plan for controller and 3 plan for feedback interaction. For the controller, plan A is traditional and allow precise manual, plan B and C is more portable but hard to controll.
+For the interaction, plan 3 is simple and could proveide constant positive feedbacks, plan 1 is hard to represent by single LED, plan 2 interact too less.
 
 ## Implementation   
 
