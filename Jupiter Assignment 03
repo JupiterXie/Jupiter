@@ -1,23 +1,23 @@
 ## Introduction   
-
 Provide a description of your initial project idea and include images of the concept sketches that you created in Part 1 of this assignment.  Explain the reasoning behind your final choice of the project concept, whether it’s based on one of the initial sketches, or a departure from the original idea.  
+
 My final project is a game controller specialized for shmup games. Because I want to chellange a more playable and technical project, so I chose to use the Unity Serial port.
 The controller connects to my Unity game and includs 4 input values (3 in joystick & 1 in button) and 1 LED output as feedback while score. 
 There are 3 plan for controller and 3 plan for feedback interaction. For the controller, plan A is traditional and allow precise manual, plan B and C is more portable but hard to controll.
 For the interaction, plan 3 is simple and could proveide constant positive feedbacks, plan 1 is hard to represent by single LED, plan 2 interact too less.
 
 ## Implementation   
-
 Explain your process of prototype development including all applicable aspects such as hardware (electronics), firmware (MicroPython code), software (HTML/CSS/JavaScript or other code), integrations (Adafruit IO, IFTTT, etc.), enclosure and mechanical design.  
-
 In general, think of your audience as someone new trying to learn how to make your project and make sure to cover anything helpful to explain how it functions.  Use a separate subheader for each part:
 
 ### Hardware
-
 List all the separate hardware components used in your project and briefly explain what they do.  To create a list with markdown syntax, use `-`, `*`, or `+` characters with each line of text:  
-* item 1  
-* item 2   
-* etc.  
+* atoms3lite: Run ESP32 microphython, connect inputs, PC and outputs.
+* joystick2: Response for 3 inputs, move the joystick to controll player move in XY axis, press joystick to trigger special attack.
+* button: Only responsible for 1 input, only has T&F two states to controll the main attack behavior.
+* I2C port: extension of atoms3, provide more ports to connect with other units.
+* i2c wires: connect hardware units with atoms3 in a simple way.
+* type C port: connect atoms3 to PC thonny.
 
 Include at least one image showing your hardware wiring in detail.  This could be several close-ups photos with the goal of showing the wiring connections are made between the ATOM board and each hardware component.  
 
