@@ -12,6 +12,7 @@ In general, think of your audience as someone new trying to learn how to make yo
 
 ### Hardware
 List all the separate hardware components used in your project and briefly explain what they do.  To create a list with markdown syntax, use `-`, `*`, or `+` characters with each line of text:  
+* PC: Where Unity games locate, run the unity game and recive inputs from the controller, giving back feedback datas from game to output devices.
 * atoms3lite: Run ESP32 microphython, connect inputs, PC and outputs.
 * joystick2: Response for 3 inputs, move the joystick to controll player move in XY axis, press joystick to trigger special attack.
 * button: Only responsible for 1 input, only has T&F two states to controll the main attack behavior.
