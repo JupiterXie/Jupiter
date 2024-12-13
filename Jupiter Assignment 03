@@ -1,5 +1,5 @@
 ## Introduction   
-[FinalSketch]   
+[FinalSketch](FinalSketch.jpg)
 
 My final project is a game controller specialized for shmup games. Because I want to chellange a more playable and technical project, so I chose to use the Unity Serial port.
 The controller connects to my Unity game and includs 4 input values (3 in joystick & 1 in button) and 1 LED output as feedback while score. 
@@ -18,7 +18,7 @@ List all the separate hardware components used in your project and briefly expla
 * i2c wires: connect hardware units with atoms3 in a simple way.
 * type C port: connect atoms3 to PC thonny.
 
-[FinalWiring] 
+[FinalWiring](FinalWiring.jpg)
 
 ### Firmware   
 import os, sys, io
@@ -101,13 +101,13 @@ https://github.com/dyadica/Unity_SerialPort
 The key to send data to MicroPython is: UnitySerialPort.Instance.SendSerialDatasLine("A,1");
 
 ### Integrations   
-[FinalIntergration]
+[FinalIntergration](FinalIntergration.jpg)
 
 ### Enclosure / Mechanical Design   
 
 Acrylic laser cut + hot glue gun
-[FinalWiring]
-[FinalLaser]
+[FinalWiring](FinalWiring.jpg)
+[FinalLaser](FinalLaser.jpg)
 
 ## Project outcome  
 Didn't figure out M5 device input to Unity, but finished Unity sending data to MicroPython.
