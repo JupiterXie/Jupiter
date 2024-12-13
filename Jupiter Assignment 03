@@ -23,19 +23,83 @@ List all the separate hardware components used in your project and briefly expla
 Include at least one image showing your hardware wiring in detail.  This could be several close-ups photos with the goal of showing the wiring connections are made between the ATOM board and each hardware component.  
 
 ### Firmware   
+import os, sys, io
+import M5
+from M5 import *
+from hardware import *
+from unit import Joystick2Unit
+import time
+from machine import UART
+import uos
+import select
 
-Provide a link to your MicroPython code and explain the important parts that make your prototype work.  Most likely you should explain the inputs/outputs used in your code and how they affect the behavior of the prototype.
+i2c0 = None
+inputX = 0
+inputY = 0
+inputA = 0
+inputB = 0
+joystick2_0 = None
 
-To include code snippets, you can use the code block markdown, like this:
+def inputdetection():
+    global inputX, inputY, inputA, inputB, joystick2_0
+    Xvalue = joystick2_0.get_x_position()
+    Yvalue = joystick2_0.get_y_position()
+    Bvalue = joystick2_0.get_button_status()
+    if abs(Xvalue/4096) > 0.2:
+        if Xvalue > 0:
+            inputX = 1
+        else:
+            inputX = -1
+    else:
+        inputX = 0
 
-``` Python  
-if(sensor_val > 100):  # sensor value higher than threshold
-   led_pin.on()  # turn on LED
-```
+    if abs(Yvalue/4096) > 0.2:
+        if Yvalue > 0:
+            inputY = -1
+        else: 
+            inputY = 1
+    else:
+        inputY = 0
+        
+    if pin1.value():
+        inputA = 0
+    else:
+        inputA = 1
+    if Bvalue:
+        inputB = 1
+    else:
+        inputB = 0
+    
+M5.begin()
+i2c0 = I2C(0, scl=Pin(39), sda=Pin(38), freq=100000)
+joystick2_0 = Joystick2Unit(i2c0, 0x63)
+pin1 = Pin(1, mode=Pin.IN, pull=Pin.PULL_UP)
+rgb = RGB()
+rgb.fill_color(0x000000)
+
+while True:
+    M5.update()
+    #inputdetection()
+    #print(inputX,",",inputY,",",inputA,",",inputB)
+    #print('1,0,0,1')
+
+    # get data from python standard input:
+    list = select.select([sys.stdin], [], [], 0)
+    if list[0]:
+        #print(ch)
+        # read one input line:
+        ch = sys.stdin.readline()
+        if ch != '\n':
+            if ch[0] == 'A':  # first character is 'A'
+                rgb.fill_color(0x0000ff)  # blue
+        else:  
+            rgb.fill_color(0x000000)  # black
+        time.sleep_ms(50)
 
 ### Software   
 
-If applicable, explain the important software components of your project with relevant code snippets and links.  
+Unity Serial Port, using templates from github.
+The key to send data to MicroPython is: UnitySerialPort.Instance.SendSerialDatasLine("A,1");
 
 ### Integrations   
 
