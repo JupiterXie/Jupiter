@@ -1,5 +1,5 @@
 ## Introduction   
-Provide a description of your initial project idea and include images of the concept sketches that you created in Part 1 of this assignment.  Explain the reasoning behind your final choice of the project concept, whether it’s based on one of the initial sketches, or a departure from the original idea.  
+[FinalSketch]   
 
 My final project is a game controller specialized for shmup games. Because I want to chellange a more playable and technical project, so I chose to use the Unity Serial port.
 The controller connects to my Unity game and includs 4 input values (3 in joystick & 1 in button) and 1 LED output as feedback while score. 
@@ -7,8 +7,6 @@ There are 3 plan for controller and 3 plan for feedback interaction. For the con
 For the interaction, plan 3 is simple and could proveide constant positive feedbacks, plan 1 is hard to represent by single LED, plan 2 interact too less.
 
 ## Implementation   
-Explain your process of prototype development including all applicable aspects such as hardware (electronics), firmware (MicroPython code), software (HTML/CSS/JavaScript or other code), integrations (Adafruit IO, IFTTT, etc.), enclosure and mechanical design.  
-In general, think of your audience as someone new trying to learn how to make your project and make sure to cover anything helpful to explain how it functions.  Use a separate subheader for each part:
 
 ### Hardware
 List all the separate hardware components used in your project and briefly explain what they do.  To create a list with markdown syntax, use `-`, `*`, or `+` characters with each line of text:  
@@ -20,7 +18,7 @@ List all the separate hardware components used in your project and briefly expla
 * i2c wires: connect hardware units with atoms3 in a simple way.
 * type C port: connect atoms3 to PC thonny.
 
-Include at least one image showing your hardware wiring in detail.  This could be several close-ups photos with the goal of showing the wiring connections are made between the ATOM board and each hardware component.  
+[FinalWiring] 
 
 ### Firmware   
 import os, sys, io
@@ -103,18 +101,19 @@ https://github.com/dyadica/Unity_SerialPort
 The key to send data to MicroPython is: UnitySerialPort.Instance.SendSerialDatasLine("A,1");
 
 ### Integrations   
-
-Include a link to and/or screenshots of any communication components used in your project, like Adafruit IO feeds, dashboards, IFTTT applets, etc.  
+[FinalIntergration]
 
 ### Enclosure / Mechanical Design   
 
-Explain how you made the enclosure or any other physical or mechanical aspects of your project with photos, screenshots of relevant files such as laser-cut patterns, 3D models, etc. (it’s great if you’re willing to share the editable source files too!)
+Acrylic laser cut + hot glue gun
+[FinalWiring]
+[FinalLaser]
 
 ## Project outcome  
 
-Summarize the results of your final project implementation and include some photos of the prototype and a video walkthrough showing it working.  
-Note that GitHub has a small size limit for uploading files via browswer (25Mb max), so you may choose to use a link to YouTube, Google Drive, or another external site.
+DEMO Vedio
 https://drive.google.com/file/d/12ImxYmDYge3_JbPW3GgsRi-bqmN51KAU/view?usp=share_link
+
 ## Conclusion  
 
 As you wrap up the project, reflect on your experience of creating it.  Use this as an opportunity to mention any discoveries or challenges you came across along the way.  If there is anything you would have done differently, or have a chance to continue the project development given more time or resources, it’s a good way to conclude this section.
